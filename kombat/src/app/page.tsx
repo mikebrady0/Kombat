@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
+
 export default function Home() {
   return (
     <div className="text-center">
@@ -10,7 +11,7 @@ export default function Home() {
         <div className="bg-[rgba(184,255,231,0.77)] p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Boxing</h2>
           <Image
-            src="/placeholder.svg?height=200&width=200"
+            src="/BoxingImg.jpg"
             alt="Boxing"
             width={200}
             height={200}
@@ -21,7 +22,7 @@ export default function Home() {
         <div className="bg-[rgba(184,255,231,0.77)] p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Brazilian Jiu-Jitsu</h2>
           <Image
-            src="/placeholder.svg?height=200&width=200"
+            src="/BjjImg.jpg"
             alt="BJJ"
             width={200}
             height={200}
@@ -32,7 +33,7 @@ export default function Home() {
         <div className="bg-[rgba(184,255,231,0.77)] p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Muay Thai</h2>
           <Image
-            src="/placeholder.svg?height=200&width=200"
+            src="/MuayThaiImg.jpg"
             alt="Muay Thai"
             width={200}
             height={200}

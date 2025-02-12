@@ -12,6 +12,7 @@ export default function Bookings() {
         setBookings(bookings.filter((booking) => booking.id !== id))
     }
 
+
     return (
     <div>
       <h1 className="text-3xl font-bold mb-4">Your Bookings</h1>
