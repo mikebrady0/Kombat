@@ -1,9 +1,9 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Electrolize } from "next/font/google"
 import Link from "next/link"
 import type React from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+const electrolize = Electrolize({ subsets: ["latin"], weight: "400" })
 
 export const metadata = {
   title: "Kombat - Martial Arts Gym & Coach Finder",
@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <header className="bg-black text-white p-4">
+      <body className={`${electrolize.className} flex flex-col min-h-screen`}>
+        <header className="fixed top-0 left-0 right-0 bg-black text-white p-4">
           <nav className="container mx-auto flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold">
               Kombat
@@ -47,8 +47,8 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <main className="container mx-auto mt-8 px-4 flex-grow">{children}</main>
-        <footer className="bg-black text-white p-4 mt-8">
+        <main className=" mt-8 px-4 flex-grow">{children}</main>
+        <footer className="fixed bottom-0 left-0 right-0 bg-black text-white p-4 mt-8 z-10">
           <div className="container mx-auto text-center">&copy; 2023 Kombat. All rights reserved.</div>
         </footer>
       </body>
