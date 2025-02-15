@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Home() {
   return (
     <div className="text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Kombat</h1>
+      <h1 className="text-5xl font-bold mb-4">Welcome to Kombat</h1>
       <p className="mb-8 text-xl">Find and book martial arts gyms and coaches near you</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div className="bg-[rgba(184,255,231,0.77)] p-6 rounded-lg shadow-md">
