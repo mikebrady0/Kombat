@@ -67,12 +67,6 @@ export default function Gyms() {
               >
                 View Details
               </Link>
-              <Link
-                href=""
-                className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"
-              >
-                Book Now
-              </Link>
             </div>
           </div>
         ))}
