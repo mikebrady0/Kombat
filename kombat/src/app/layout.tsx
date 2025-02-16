@@ -39,11 +39,6 @@ export default function RootLayout({
                   Coaches
                 </Link>
               </li>
-              <li>
-                <Link href="/bookings" className="hover:text-gray-300">
-                  Bookings
-                </Link>
-              </li>
             </ul>
           </nav>
         </header>
