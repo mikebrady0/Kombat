@@ -4,7 +4,7 @@ import { useState } from "react"
 import { supabase } from "../userForm/utils/supabaseClient"
 
 export default function UserForm() {
-    const [userType, setUserType] = useState<"gym" | "coach" | "customer">("customer");
+    const [userType, setUserType] = useState<"gym" | "coach">("");
     const [formData, setFormData] = useState({});
 
     const handleInputChange = (e) => {
@@ -18,9 +18,6 @@ export default function UserForm() {
         console.log("Form data: ", formData);
         alert("Form submitted successfully");
 
-        if (userType === "gym") {
-
-        }
     };
 
     return (
@@ -37,7 +34,6 @@ export default function UserForm() {
             >
               <option value="gym">Gym</option>
               <option value="coach">Coach</option>
-              <option value="customer">Customer</option>
             </select>
           </div>
 
@@ -141,41 +137,6 @@ export default function UserForm() {
           </div>
         </>
       )}
-
-      {userType === "customer" && (
-        <>
-          <div className="mb-4">
-            <label className="block mb-2">Email:</label>
-            <input
-              type="email"
-              name="email"
-              onChange={handleInputChange}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Preferred Discipline:</label>
-            <input
-              type="text"
-              name="discipline"
-              onChange={handleInputChange}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Goals:</label>
-            <textarea
-              name="goals"
-              onChange={handleInputChange}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-        </>
-      )}
-
       {/* Submit Button */}
       <button
         type="submit"
