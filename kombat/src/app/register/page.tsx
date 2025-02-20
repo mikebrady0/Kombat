@@ -1,6 +1,5 @@
 "use client";
 
-import UserForm from "./userForm/page";
 import { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 
@@ -54,27 +53,52 @@ export default function RegistrationPage() {
     e.preventDefault();
     setLoading(true);
 
-    const userTable = userType === "gym" ? "gyms" : "coaches";
+    if (userType === "gym") {
 
-    const formData = userType === "gym"
-      ? { name, location, contact, description, discipline }
-      : { name, discipline, experience, contact, bio };
-
-    try {
-      const { data, error } = await supabase.from(userTable).insert([formData]);
-
-      if (error) {
-        console.error("Error uploading Supabase Data:", error);
-        throw error;
+      try {
+        const { data, error } = await supabase
+        .from('gyms')
+        .insert({ name, location, contact, description, discipline })
+        .select()
+  
+        if (error) {
+          console.error("Supabase Error:", JSON.stringify(error, null, 2)); // Log error properly
+          throw error;
+        }
+  
+        console.log("Form data submitted:", data);
+        alert("Form submitted successfully");
+      } catch (err) {
+        console.error("Error submitting data:", err);
+      } finally {
+        setLoading(false);
       }
 
-      console.log("Form data submitted:", data);
-      alert("Form submitted successfully");
-    } catch (err) {
-      console.error("Error submitting data:", err);
-    } finally {
-      setLoading(false);
     }
+
+    if (userType === "coach") {
+
+      try {
+        const { data, error } = await supabase
+        .from('coaches')
+        .insert({ name, location, discipline, experience, contact, bio })
+        .select()
+  
+        if (error) {
+          console.error("Supabase Error:", JSON.stringify(error, null, 2)); // Log error properly
+          throw error;
+        }
+  
+        console.log("Form data submitted:", data);
+        alert("Form submitted successfully");
+      } catch (err) {
+        console.error("Error submitting data:", err);
+      } finally {
+        setLoading(false);
+      }
+
+    }
+
   };
 
   return (
@@ -142,6 +166,10 @@ export default function RegistrationPage() {
             <div className="mb-4">
               <label className="block mb-2">Contact Information:</label>
               <input type="text" name="contact" onChange={handleInputChange} className="w-full p-2 border rounded" required />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Location:</label>
+              <input type="text" name="location" onChange={handleInputChange} className="w-full p-2 border rounded" required />
             </div>
             <div className="mb-4">
               <label className="block mb-2">Bio:</label>

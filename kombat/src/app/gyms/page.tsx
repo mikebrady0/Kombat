@@ -8,7 +8,7 @@ interface Gym {
   id: number;
   name: string;
   discipline: string;
-  rating: number;
+  location: string;
 }
 
 export default function Gyms() {
@@ -59,7 +59,7 @@ export default function Gyms() {
           >
             <h2 className="text-xl font-semibold mb-2">{gym.name}</h2>
             <p className="mb-2">Discipline: {gym.discipline}</p>
-            <p className="mb-4">Rating: {gym.rating}/5</p>
+            <p className="mb-4">Location: {gym.location}</p>
             <div className="flex flex-col sm:flex-row mt-4">
               <Link
                 href={`/gyms/${gym.id}`}
