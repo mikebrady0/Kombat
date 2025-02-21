@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { useParams } from "next/navigation";
 
-interface Coach {
+interface Gym {
     id: number
     name: string
     discipline: string
