@@ -57,7 +57,7 @@ export default function RegistrationPage() {
 
       try {
         const { data, error } = await supabase
-        .from('gyms')
+        .from('pending_gyms')
         .insert({ name, location, contact, description, discipline })
         .select()
   
@@ -80,7 +80,7 @@ export default function RegistrationPage() {
 
       try {
         const { data, error } = await supabase
-        .from('coaches')
+        .from('pending_coaches')
         .insert({ name, location, discipline, experience, contact, bio })
         .select()
   
@@ -108,7 +108,9 @@ export default function RegistrationPage() {
           All communications and bookings are solely the responsibility of the Gym/Coach and Customer.
           At this time, Kombat does not facilitate communication or booking services.
           We are actively working to integrate these features into our platform to enhance the experience for both fighters and trainers.
-        </p>
+
+          All submissions will undergo a thorough review process before being published to ensure accuracy and quality.        
+          </p>
       </div>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">User Registration</h2>

@@ -44,7 +44,7 @@ export default function RootLayout({
         </header>
         <main className=" mt-8 px-4 flex-grow">{children}</main>
         <footer className="fixed bottom-0 left-0 right-0 bg-black text-white p-4 mt-8 z-10">
-          <div className="container mx-auto text-center">&copy; 2024 Kombat. All rights reserved.</div>
+          <div className="container mx-auto text-center"> Kombat</div>
         </footer>
       </body>
     </html>
