@@ -15,7 +15,7 @@ interface Coach {
     experience: string
 }
 
-export default function details() {
+export default function Details() {
 
     const { id } = useParams();
     const [coach, setCoach] = useState<Coach | null>(null);

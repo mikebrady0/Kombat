@@ -32,7 +32,7 @@ export default function Coaches() {
 
         setCoaches(data); // Set the fetched gyms
       } catch (err) {
-        setError("Failed to fetch coaches. Please try again later."); // Set error message
+        setError(`Failed to fetch coaches. Please try again later. ${err}`); // Set error message
         console.error("Error fetching coaches:", err); // Log the error
       } finally {
         setLoading(false); // Ensure loading is set to false

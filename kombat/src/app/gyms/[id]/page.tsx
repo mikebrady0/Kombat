@@ -14,7 +14,7 @@ interface Gym {
     description: string
 }
 
-export default function details() {
+export default function Details() {
 
     const { id } = useParams();
     const [gym, setGym] = useState<Gym | null>(null);
@@ -34,7 +34,7 @@ export default function details() {
                 if (error) throw error;
                 setGym(data);
             } catch (err) {
-                setError('Failed to fetch Coach details')
+                setError(`Failed to fetch Coach details ${err}`)
             } finally {
                 setLoading(false);
             }
