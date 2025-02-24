@@ -35,7 +35,7 @@ export default function Details() {
                 if (error) throw error;
                 setCoach(data);
             } catch (err) {
-                setError('Failed to fetch Coach details')
+                setError(`Failed to fetch Coach details ${err}`)
             } finally {
                 setLoading(false);
             }
